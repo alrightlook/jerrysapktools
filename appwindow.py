@@ -9,7 +9,7 @@ from PyQt4 import QtGui as qtgui
 from PyQt4 import QtCore
 
 class AppMainWindow(qtgui.QDialog):
-	def __init__(self):
+	def __init__(self, targetFolder):
 		super(AppMainWindow, self).__init__()
 		self.openfilebtn = qtgui.QPushButton()
 		self.openfilebtn.setText("Open An APK File")
@@ -68,7 +68,7 @@ class AppMainWindow(qtgui.QDialog):
 		self.setWindowTitle("Jerry's Apk Tools")
 		self.setGeometry(100,100,300,300)
 		self.currentPath = os.path.dirname(os.path.abspath(__file__))
-		self.unpackFolder = self.currentPath + "/decompile"
+		self.unpackFolder = targetFolder + "/decompile"
 		if not os.path.exists(self.unpackFolder):
 			    os.makedirs(self.unpackFolder)
 
