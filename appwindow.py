@@ -67,7 +67,7 @@ class AppMainWindow(qtgui.QDialog):
 		self.connect(self.saveIcon, QtCore.SIGNAL("clicked()"), self.doSaveIcon)
 		self.setWindowTitle("Jerry's Apk Tools")
 		self.setGeometry(100,100,300,300)
-		self.currentPath = os.path.dirname(os.path.abspath(__file__))
+		self.currentPath = targetFolder #os.path.dirname(os.path.abspath(__file__))
 		self.unpackFolder = targetFolder + "/decompile"
 		if not os.path.exists(self.unpackFolder):
 			    os.makedirs(self.unpackFolder)

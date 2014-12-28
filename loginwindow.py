@@ -59,7 +59,8 @@ class LoginWindow(qtgui.QWidget):
 		data = res.read()
 		self.conn.close()
 		if (res.status == 200):
-			mainwin = appwindow.AppMainWindow()
+			mainDir = os.path.dirname(os.path.abspath(__file__))
+			mainwin = appwindow.AppMainWindow(mainDir)
 			self.loginFlag = True
 			self.close()
 			mainwin.exec_()
