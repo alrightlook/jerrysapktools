@@ -97,7 +97,7 @@ class AppMainWindow(qtgui.QDialog):
 		
 		chooseCornerDialog = qtgui.QFileDialog()
 		if( chooseCornerDialog.exec_()):
-			self.cornerName = chooseCornerDialog.selectedFiles()
+			self.cornerName = chooseCornerDialog.getOpenFileName(self, "Choose Corner", "", "apk files(*.apk)")
 			self.cornerFile = self.cornerName[0]
 			cornerPixmap = qtgui.QPixmap(str(self.cornerFile))
 			print "the corner file is:" + self.cornerFile
